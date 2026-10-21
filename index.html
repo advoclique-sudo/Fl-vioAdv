@@ -194,6 +194,7 @@
       flex-direction: column;
       line-height: 1.1;
     }
+    .brand-logo { display: block; width: clamp(128px, 16vw, 168px); height: auto; }
     .brand-name {
       font-family: var(--font-display);
       font-size: 1.2rem;
@@ -490,6 +491,18 @@
       width: 100%; height: 3px;
       background: linear-gradient(90deg, var(--gold), transparent 70%);
     }
+    .about-body { display: grid; gap: 24px; align-content: center; }
+    .about-photo {
+      margin: 0;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      aspect-ratio: 4 / 5;
+      max-width: 420px;
+      width: 100%;
+      justify-self: center;
+    }
+    .about-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 20%; }
     .about h2 { font-size: clamp(1.7rem, 3vw, 2.2rem); }
     .about-sub { color: var(--gold); font-weight: 500; letter-spacing: 0.04em; font-size: 0.95rem; }
     .about p { font-weight: 300; max-width: 62ch; }
@@ -612,7 +625,8 @@
       display: grid;
       gap: 32px;
     }
-    .footer-brand { display: grid; gap: 8px; }
+    .footer-brand { display: grid; gap: 8px; justify-items: start; }
+    .footer-logo { display: block; width: 180px; height: auto; margin-bottom: 4px; }
     .footer-brand strong {
       font-family: var(--font-display);
       font-size: 1.25rem;
@@ -770,8 +784,7 @@
         opacity: 0.6;
       }
       .step-num { left: 0; }
-      .about { grid-template-columns: 1.2fr 1fr; align-items: center; }
-      .about-sign { grid-column: 1 / -1; }
+      .about { grid-template-columns: 0.8fr 1.2fr; align-items: center; gap: 48px; }
       .services { grid-template-columns: repeat(3, 1fr); }
       .wa-float { display: grid; }
       .mobile-bar { display: none; }
@@ -812,7 +825,7 @@
   <header class="header">
     <div class="container">
       <a href="#inicio" class="brand" aria-label="Flávio Fontoura Advocacia">
-        <span class="brand-name">Flávio Fontoura Advocacia</span>
+        <img class="brand-logo" src="img/logo-sampaio.svg" width="1360" height="374" alt="Sampaio Advogados">
         <span class="brand-oab">OAB/MT 6469</span>
       </a>
       <a class="header-whats wa-link" data-origin="header" href="https://wa.me/5565999035444?text=Ol%C3%A1%21%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20div%C3%B3rcio%20e%20Direito%20de%20Fam%C3%ADlia." target="_blank" rel="noopener">
@@ -1030,6 +1043,10 @@
     <section id="escritorio" aria-labelledby="sobre-title">
       <div class="container">
         <div class="about reveal">
+          <figure class="about-photo">
+            <img src="img/flavio-fontoura.jpg" width="960" height="1280" alt="Advogado Flávio Fontoura em seu escritório" loading="lazy">
+          </figure>
+          <div class="about-body">
           <div>
             <span class="eyebrow">O escritório</span>
             <h2 id="sobre-title" style="margin-top:14px">Flávio Fontoura Advocacia</h2>
@@ -1039,6 +1056,7 @@
           <div class="about-sign">
             <strong>Flávio Fontoura</strong>
             <span>OAB/MT 6469</span>
+          </div>
           </div>
         </div>
       </div>
@@ -1166,7 +1184,7 @@
   <footer class="footer">
     <div class="container">
       <div class="footer-brand">
-        <strong>Flávio Fontoura Advocacia</strong>
+        <img class="footer-logo" src="img/logo-sampaio-claro.svg" width="1360" height="374" alt="Sampaio Advogados" loading="lazy">
         <span>OAB/MT 6469</span>
         <p style="margin-top:8px;font-weight:300;max-width:38ch">Orientação jurídica em Direito de Família, com atendimento individualizado e sigiloso.</p>
       </div>
